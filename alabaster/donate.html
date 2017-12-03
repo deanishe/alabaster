@@ -1,9 +1,12 @@
-{% if theme_gratipay_user or theme_gittip_user %}
+{% if theme_paypal_user or theme_patreon_user_number %}
 <h3>Donate</h3>
-<p>
-Consider supporting the authors on <a href="https://www.gratipay.com/">Gratipay</a>:
-<script data-gratipay-username="{{ theme_gratipay_user or theme_gittip_user }}"
-        data-gratipay-widget="button"
-        src="//gttp.co/v1.js"></script>
-</p>
+<p>Consider supporting the authors</p>
+<ul class="donations">
+	{% if theme_paypal_user %}
+	<li class="donate"><a href="https://paypal.me/{{ theme_paypal_user }}"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal" title="PayPal"></a></li>
+	{% endif %}
+	{% if theme_patreon_user_number %}
+	<li class="donate"><a href="https://www.patreon.com/bePatron?u={{ theme_patreon_user_number }}"><img src="{{ pathto('_static/patreon.png', 1) }}" alt="Patreon" title="Patreon"></a></li>
+	{% endif %}
+</ul>
 {% endif %}

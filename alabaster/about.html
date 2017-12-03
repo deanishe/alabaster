@@ -40,6 +40,22 @@
 </p>
 {% endif %}
 
+{% if theme_coveralls_button|lower != 'false' %}
+{% if theme_coveralls_button|lower == 'true' %}
+    {% set path = theme_github_user + '/' + theme_github_repo %}
+{% else %}
+    {% set path = theme_coveralls_button %}
+{% endif %}
+<p>
+<a href="https://coveralls.io/github/{{ path }}">
+    <img
+    alt="https://img.shields.io/coveralls/{{ path }}/{{ theme_badge_branch }}.svg?style=flat"
+    src="https://img.shields.io/coveralls/{{ path }}/{{ theme_badge_branch }}.svg?style=flat"
+    />
+</a>
+{% endif %}
+
+
 {% if theme_codecov_button|lower != 'false' %}
 {% if theme_codecov_button|lower == 'true' %}
     {% set path = theme_github_user + '/' + theme_github_repo %}
@@ -54,4 +70,19 @@
     />
 </a>
 </p>
+{% endif %}
+
+{% if theme_pypi_button|lower != 'false' %}
+{% if theme_pypi_button|lower == 'true' %}
+    {% set path = project %}
+{% else %}
+    {% set path = theme_pypi_button %}
+{% endif %}
+<p>
+<a href="https://pypi.python.org/pypi/{{ path }}">
+    <img
+    alt="https://img.shields.io/pypi/v/{{ path }}.svg?style=flat"
+    src="https://img.shields.io/pypi/v/{{ path }}.svg?style=flat"
+    />
+</a>
 {% endif %}

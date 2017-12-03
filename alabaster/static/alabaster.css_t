@@ -218,6 +218,16 @@ div.sphinxsidebar hr {
     width: 50%;
 }
 
+div.sphinxsidebar ul.donations > li.donate {
+    margin-bottom: 0.3em;
+}
+
+div.sphinxsidebar ul.donations > li.donate > a,
+div.sphinxsidebar ul.donations > li.donate > a:active,
+div.sphinxsidebar ul.donations > li.donate > a:hover {
+    border-bottom: none;
+}
+
 /* -- body styles ----------------------------------------------------------- */
 
 a {
